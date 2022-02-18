@@ -236,27 +236,30 @@ class _AccountPageState extends State<AccountPage> {
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: [
-                          Column(
-                            children: [
-                              Container(
-                                height: 70,
-                                width: 70,
-                                decoration: BoxDecoration(
-                                    color: bgWhite,
-                                    shape: BoxShape.circle,
-                                    border:
-                                        Border.all(width: 1, color: bgGrey)),
-                                child: Icon(Feather.plus, color: bgGrey),
-                              ),
-                              Text("New"),
-                            ],
+                          Padding(
+                            padding: const EdgeInsets.only(top: 12),
+                            child: Column(
+                              children: [
+                                Container(
+                                  height: 70,
+                                  width: 70,
+                                  decoration: BoxDecoration(
+                                      color: bgWhite,
+                                      shape: BoxShape.circle,
+                                      border:
+                                          Border.all(width: 1, color: bgGrey)),
+                                  child: Icon(Feather.plus, color: bgGrey),
+                                ),
+                                Text("New"),
+                              ],
+                            ),
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: List.generate(
                               lengthHighlights,
                               (index) => Padding(
-                                padding: const EdgeInsets.only(top: 5, left: 8),
+                                padding: const EdgeInsets.only(left: 8),
                                 child: Container(
                                   height: 70,
                                   width: 70,
@@ -283,7 +286,10 @@ class _AccountPageState extends State<AccountPage> {
                 children: [
                   Container(
                     child: IconButton(
-                      icon: Icon(FontAwesome.th, color: selectedIndex == 0 ? textBlack : textBlack.withOpacity(0.5)),
+                      icon: Icon(FontAwesome.th,
+                          color: selectedIndex == 0
+                              ? textBlack
+                              : textBlack.withOpacity(0.5)),
                       splashRadius: 15,
                       onPressed: () {
                         setState(() {
@@ -294,7 +300,10 @@ class _AccountPageState extends State<AccountPage> {
                   ),
                   Container(
                     child: IconButton(
-                      icon: Icon(FontAwesome.user_circle_o, color: selectedIndex == 1 ? textBlack : textBlack.withOpacity(0.5)),
+                      icon: Icon(FontAwesome.user_circle_o,
+                          color: selectedIndex == 1
+                              ? textBlack
+                              : textBlack.withOpacity(0.5)),
                       splashRadius: 15,
                       onPressed: () {
                         setState(() {
@@ -310,19 +319,21 @@ class _AccountPageState extends State<AccountPage> {
                   Row(
                     children: [
                       Container(
-                    height: 1,
-                    width: size.width * 0.474,
-                    decoration: BoxDecoration(
-                      color: selectedIndex == 0 ? bgDark : Colors.transparent,
-                    ),
-                  ),
-                  Container(
-                    height: 1,
-                    width: size.width * 0.474,
-                    decoration: BoxDecoration(
-                      color: selectedIndex == 0 ? Colors.transparent : bgDark,
-                    ),
-                  ),
+                        height: 1,
+                        width: size.width * 0.474,
+                        decoration: BoxDecoration(
+                          color:
+                              selectedIndex == 0 ? bgDark : Colors.transparent,
+                        ),
+                      ),
+                      Container(
+                        height: 1,
+                        width: size.width * 0.474,
+                        decoration: BoxDecoration(
+                          color:
+                              selectedIndex == 0 ? Colors.transparent : bgDark,
+                        ),
+                      ),
                     ],
                   ),
                   Container(
@@ -356,7 +367,9 @@ class _AccountPageState extends State<AccountPage> {
       direction: Axis.horizontal,
       spacing: 2,
       runSpacing: 2,
-      children: List.generate(images.length, (index) => Container(
+      children: List.generate(
+        images.length,
+        (index) => Container(
           height: 132,
           width: (size.width - 6) / 3,
           decoration: BoxDecoration(
@@ -365,7 +378,8 @@ class _AccountPageState extends State<AccountPage> {
               fit: BoxFit.cover,
             ),
           ),
-        ),),
+        ),
+      ),
     );
   }
 
@@ -374,7 +388,9 @@ class _AccountPageState extends State<AccountPage> {
       direction: Axis.horizontal,
       spacing: 2,
       runSpacing: 2,
-      children: List.generate(imageWithTags.length, (index) => Container(
+      children: List.generate(
+        imageWithTags.length,
+        (index) => Container(
           height: 132,
           width: (size.width - 6) / 3,
           decoration: BoxDecoration(
@@ -383,7 +399,8 @@ class _AccountPageState extends State<AccountPage> {
               fit: BoxFit.cover,
             ),
           ),
-        ),),
+        ),
+      ),
     );
   }
 }
