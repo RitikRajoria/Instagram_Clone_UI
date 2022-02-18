@@ -1,4 +1,4 @@
-# instagram_clone_app_ui
+# instagram_clone_ui_flutter
 
 A new Flutter project.
 
